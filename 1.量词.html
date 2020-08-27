@@ -1,0 +1,47 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 19:52:40
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 19:57:43
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'sdasd223k2j2koiun234';
+
+        var re1 = /\d?/g;
+        console.log(str.match(re1)); //  ["", "", "", "", "", "2", "2", "3", "", "2", "", "2", "", "", "", "", "", "2", "3", "4", ""]
+
+        var re2 = /\d+/g;
+        console.log(str.match(re2)); //  ["223", "2", "2", "234"]
+
+        var re3= /\d*/g;
+        console.log(str.match(re3)); //  ["", "", "", "", "", "223", "", "2", "", "2", "", "", "", "", "", "234", ""]
+
+        var re4= /\d{2}/g;
+        console.log(str.match(re4)); //  ["22", "23"]
+
+        var re5= /\d{2,}/g;
+        console.log(str.match(re5)); //   ["223", "234"]
+
+        var re6= /\d{1,2}/g;
+        console.log(str.match(re6)); //    ["22", "3", "2", "2", "23", "4"]
+
+
+
+
+
+    </script>
+</body>
+
+</html>

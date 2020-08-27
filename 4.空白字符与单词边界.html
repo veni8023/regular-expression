@@ -1,0 +1,50 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 18:22:44
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 19:38:15
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1='  dfsdf dfsdf fdfs ';// 其中包含tab制表符 和space空格的空白字符
+        var re1=/\s+/g;
+        console.log('删除所有空白字符','('+str1.replace(re1,'')+')') // (dfsdfdfsdffdfs)
+        
+        var re2=/^\s+/;
+        console.log('删除开头空白字符','('+str1.replace(re2,'')+')') // (dfsdf dfsdf fdfs )
+
+        var re3=/\s+$/;
+        console.log('删除结尾空白字符','('+str1.replace(re3,'')+')') // (  dfsdf dfsdf fdfs)
+
+        var re4=/^\s+|\s+$/g
+        console.log('删除开头和结尾空白字符','('+str1.replace(re4,'')+')') // (dfsdf dfsdf fdfs)
+        console.log('删除开头和结尾空白字符','('+str1.trim()+')') // (dfsdf dfsdf fdfs)
+
+        var str2='active act    abcact';
+
+        var re5=/act\b/;
+        console.log('匹配第一个单词右为空',str2.match(re5)) // ["act", index: 7, input: "activeact    abc actact", groups: undefined]
+        var re6=/act\b/g;
+        console.log('匹配单词右为空',str2.match(re6)) // ["act", 'act'] 多匹配到了结尾的'act'
+
+        var re7=/act\B/;
+        console.log('匹配单词右非空',str2.match(re7)) // ["act", index: 0, input: "active act    abcact", groups: undefined]
+
+        var re8=/\bact\b/;
+        console.log('匹配单词左右为空',str2.match(re8)) // ["act", index: 7, input: "active act    abcact", groups: undefined]
+
+        var re9=/\bact\B/;
+        console.log('匹配单词左为空右非空',str2.match(re9)) // ["act", index: 0, input: "active act    abcact", groups: undefined]
+
+    </script>
+</body>
+</html>

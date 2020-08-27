@@ -1,0 +1,44 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 20:31:18
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 20:59:33
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='2324asdkljla^drabdku93890HSaedHDFH3380avd9Q';
+        var re1=/[a-z]+|[A-Z]+/g;
+        console.log('匹配小写字母或者大写字母',str.match(re1)) // ["asdkljla", "drabdku", "HS", "aed", "HDFH", "avd", "Q"]
+        
+        var re2=/[a-f]{2,}|[0-5]+/g
+        console.log('匹配a-f至少两个小写字母或者0-5数字',str.match(re2)) // ["2324", "abd", "3", "0", "aed", "33", "0"]
+
+        var re1=/a[^se]d/g;
+        console.log('匹配以a开头，以d结尾，但是中间字母不为s或e的字符串',str.match(re1)); //["a^d", "abd", "avd"]
+
+        var re2=/[^0-9]+/g;
+        console.log('排除数字',str.match(re2)); //["asdkljla^drabdku", "HSaedHDFH", "avd", "Q"]
+
+        var re3=/[^a-z]+/g;
+        console.log('排除小写字母',str.match(re3)); // ["2324", "^", "93890HS", "HDFH3380", "9Q"]
+
+        var re4=/[^a-z]+/gi;
+        console.log('排除所有字母',str.match(re4)); // ["2324", "^", "93890", "3380", "9"]
+
+        var re5=/a[s^e]d/g;
+        console.log('匹配以a开头，以d结尾，中间字母为s、e、^的字符串',str.match(re5)); // ["asd", "a^d", "aed"]
+
+
+
+    </script>
+</body>
+</html>

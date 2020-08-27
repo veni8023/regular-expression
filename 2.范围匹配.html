@@ -1,0 +1,43 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 19:58:16
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 20:03:56
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='2342asdfsraadw3349iiavdhdjfno92中国AXddRY公牛';
+        var re1=/a[sv]d/g;
+        console.log(str.match(re1)); // ["asd", "avd"]
+        
+        var re2=/[0-9]+/g;
+        console.log(str.match(re2)); // ["2342", "3349", "92"]
+
+        var re3=/[0-5]+/g;
+        console.log(str.match(re3)); // ["2342", "334", "2"]
+
+        var re4=/[a-z]+/g;
+        console.log(str.match(re4)); // ["asdfsraadw", "iiavdhdjfno", "dd"]
+
+        var re5=/[A-Z]+/g;
+        console.log(str.match(re5)); // ["AX", "RY"]
+
+        var re6=/[A-z]+/g;
+        console.log(str.match(re6)); // ["asdfsraadw", "iiavdhdjfno", "AXddRY"]
+
+        var re7=/[\u4e00-\u9fa5]+/g;
+        console.log(str.match(re7)); // ["中国", "公牛"]
+
+
+    </script>
+</body>
+</html>

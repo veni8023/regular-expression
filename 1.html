@@ -1,0 +1,40 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-10 17:18:33
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 19:52:50
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var str='sdasd223k2j2koiun234';
+         // 字母长度不限，数字有且必须只能有一个，数字在字母后面
+         // [sdasd2,kjkoiun2]
+
+        // var re1=/[a-z]+[0-9]/g;
+         var re1=/[a-z]+\d/g
+         console.log(str.match(re1));
+
+        // 字母有且只有一个，数字不限，字母在数字前面
+        var re2=/[a-z]\d+/g
+        console.log(str.match(re2));
+
+        // 一个字母一个数字
+        // ['d2','n2']
+        var re3=/[a-z]\d/g
+        console.log(str.match(re3));
+
+        // 一个字母一个数字(可重复),分组
+        var re4=/([a-z]\d)+/g
+        console.log(str.match(re4));
+    </script>
+</body>
+</html>

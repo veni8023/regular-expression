@@ -1,0 +1,33 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 20:05:50
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 20:14:16
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='33d2f3d5444io7r90dhshdfhjk29u78';
+
+        var re1=/[a-z]\d/g
+        console.log('匹配一个字母一个数字',str.match(re1)) //  ["d2", "f3", "d5", "o7", "r9", "k2", "u7"]
+
+        var re2=/([a-z]\d){2}/g
+        console.log('匹配一个字母一个数字循环2次',str.match(re2)) //  ["d2f3", "o7r9"]
+
+        var re3=/([a-z]\d){2}[a-z]\d{2,}/g
+        console.log('匹配一个字母一个数字循环2次并以一个字母和2个以上的数字结尾',str.match(re3)) ["d2f3d5444"]
+
+
+
+    </script>
+</body>
+</html>

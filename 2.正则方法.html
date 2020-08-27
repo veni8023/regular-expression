@@ -1,0 +1,63 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 16:24:19
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 17:18:09
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1='dsfsdf2323kjhjkh999';
+        var re1=/\d/;
+        console.log('验证是否有数字',re1.test(str1)); // true
+
+        var str2='123234324234234234';
+        var re2=/^\d+$/;
+        console.log('验证是否是纯数字',re2.test(str1)); // false
+        console.log('验证是否是纯数字',re2.test(str2)); // true
+
+        var str3='13763652998';
+        var str4='17763652998';
+        var str5='1776365299888';
+        var re3=/^1[3,5]\d{9}$/
+        // 手机号要求：开头是1，第二位是3、5，总长度是11
+        console.log('验证是否是一个手机号',re3.test(str3)); // true
+        console.log('验证是否是一个手机号',re3.test(str4)); // false
+        console.log('验证是否是一个手机号',re3.test(str5)); // false
+
+        var str6='dedsf32323dfsdf82355';
+        var re4=/\d+/;
+        var re5=/\d+/g;
+
+        console.log('匹配开始位置',re4.lastIndex) // 0
+        console.log('单次匹配数字',re4.exec(str6)) //["32323", index: 5, input: "dedsf32323dfsdf32355", groups: undefined]
+
+        console.log('匹配开始位置',re4.lastIndex) // 0
+        console.log('单次匹配数字',re4.exec(str6)) //["32323", index: 5, input: "dedsf32323dfsdf32355", groups: undefined]
+
+        console.log('匹配开始位置',re5.lastIndex) // 0
+        console.log('全局匹配数字',re5.exec(str6)) //["32323", index: 5, input: "dedsf32323dfsdf32355", groups: undefined]
+
+        console.log('匹配开始位置',re5.lastIndex) // 10
+        console.log('全局匹配数字',re5.exec(str6)) //["82355", index: 15, input: "dedsf32323dfsdf32355", groups: undefined]
+
+        console.log('匹配开始位置',re5.lastIndex) // 20
+        console.log('全局匹配数字',re5.exec(str6)) // null
+
+        console.log('匹配开始位置',re5.lastIndex) // 0
+        console.log('全局匹配数字',re5.exec(str6)) // ["32323", index: 5, input: "dedsf32323dfsdf32355", groups: undefined]
+
+
+        // 全局匹配和非全局匹配结果一样，都只显示第一次匹配到的结果
+
+    </script>
+</body>
+</html>

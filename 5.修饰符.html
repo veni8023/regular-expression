@@ -1,0 +1,48 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 20:17:21
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 20:30:06
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id='content'>
+
+    </textarea>
+    <input type='button' id='submit' value="提交">
+    <script>
+        var value='';
+        var submit=document.getElementById('submit');
+        var content=document.getElementById('content');
+        submit.onclick=function(){
+            var str=content.value;
+            console.log('原字符串',str); 
+            // 原字符串 fsdfsfw3dsfdFDGEvsfew5545
+            //          sdfRW4R3243
+            //          中华人民共和国公牛
+            //          sdfwe534R456
+            
+            var re1=/[a-z]+/gi;
+            console.log('忽略大小写',str.match(re1))  // ["fsdfsfw", "dsfdFDGEvsfew", "sdfRW", "R", "sdfwe", "R"];
+
+            var re2=/^[a-z]+/gm;
+            console.log('多行匹配开头小写字母',str.match(re2))  // ["fsdfsfw", "sdf", "sdfwe"];
+
+            var re3=/[0-9]+$/gm;
+            console.log('多行匹配结尾数字',str.match(re3))  // ["5545", "3243", "456"];
+
+
+
+
+        }
+    </script>
+</body>
+</html>

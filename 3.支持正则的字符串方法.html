@@ -1,0 +1,41 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 17:30:25
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 18:00:26
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1='234234234234';
+        var str2='23453derghjklj555';
+        var re1=/[A-z]/;
+        console.log('查找第一个字母位置',str1.search(re1)) // -1
+        console.log('查找第一个字母位置',str2.search(re1)) // 5
+
+        var str3='我们是中华人民人民共和国人民';
+        var re2=/人民/g;
+        console.log('替换敏感词',str3.replace(re2,'**')); // 我们是中华****共和国**
+        console.log('原字符串',str3); // 我们是中华人民人民共和国人民
+
+        var str4='sdfsdfsd342342f4r4f5667d';
+        var re3=/\d+/g;
+        console.log('过滤字符串中数字',str4.replace(re3,'')); // sdfsdfsdfrfd
+
+        var str5='23klj9809kh0-2jjh09-jnlsndfl333lkl';
+        var re4=/\d+/g;
+        console.log('用-截取字符串',str5.split('-')); //  ["23klj9809kh0", "2jjh09", "jnlsndfl333lkl"]
+        console.log('用数字截取字符串',str5.split(re4)); // ["", "klj", "kh", "-", "jjh", "-jnlsndfl", "lkl"]
+
+
+    </script>
+</body>
+</html>

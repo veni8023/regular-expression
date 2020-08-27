@@ -1,0 +1,29 @@
+<!--
+ * @Author: veni
+ * @Date: 2019-12-12 20:13:51
+ * @LastEditors: veni
+ * @LastEditTime: 2019-12-12 20:17:10
+ * @Description: 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str='123423uoif2-309-3709723jkljfklj';
+        
+        var re1=/^[0-9]+/;
+        console.log('出现在字符串开头的数字',str.match(re1)); //["123423", index: 0, input: "123423uoif2-309-3709723jkljfklj", groups: undefined]
+
+        var re2=/[a-z]+$/;
+        console.log('出现在字符串结尾的字母',str.match(re2)); //["jkljfklj", index: 23, input: "123423uoif2-309-3709723jkljfklj", groups: undefined]
+
+        
+    </script>
+</body>
+</html>
